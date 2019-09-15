@@ -1,0 +1,2 @@
+# Don't store duplicate commands and commands starting with :space: in .bash_history
+export HISTCONTROL=ignoredups:ignorespace
