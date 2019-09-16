@@ -25,8 +25,8 @@ This scripts are highly opinionated and aren't meant to be universaly liked! If 
 To install dotfiles and run setup scripts clone the repository and execute `bootstrap.sh` script. Each script can be run multiple times when something fails along the way, nothing should break or be written multiple times.
 
 ```
-$ git clone https://github.com/vangyyy/manjaro-setup.git
-$ cd manjaro-setup
+$ git clone https://github.com/vangyyy/linux-setup.git
+$ cd linux-setup
 $ ./bootstrap.sh
 ```
 
