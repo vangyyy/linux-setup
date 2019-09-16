@@ -17,6 +17,18 @@ readonly INSTALL_PACKAGES=(
 banner "UPDATE PACKAGES"
 yay -Syyu --noconfirm
 
+banner "INSTALLING YAY"
+if ! [ -x "$(command -v yay)" ]; then
+    log "Installing \e[32mYay\e[0m"
+    sudo pacman -S base-devel --noconfirm
+    git clone https://aur.archlinux.org/yay.git /tmp/yay
+    cd /tmp/yay
+    makepkg -si --noconfirm
+    cd -
+else
+    log "Skip installing \e[93mYay\e[0m (already installed)"
+fi
+
 banner "REMOVING PACKAGES"
 for pkg in "${REMOVE_PACKAGES[@]}"; do
     if yay -Qi ${pkg} &>/dev/null; then
