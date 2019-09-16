@@ -38,7 +38,7 @@ if [ -f ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME} ]; then
     log "Skip copying \e[93m${WALLPAPER_NAME}\e[0m (already exists: ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME})"
 else
     log "Copying \e[32m${WALLPAPER_NAME}\e[0m (${DIR}/${WALLPAPER_NAME})"
-    cp ${DIR}/wallpaper/${WALLPAPER_NAME} ${HOME}/Pictures/Wallpapers
+    rsync -a ${DIR}/wallpaper/${WALLPAPER_NAME} ${HOME}/Pictures/Wallpapers
 fi
 
 readonly THEME_NAME='Ant-Bloody'
@@ -63,13 +63,14 @@ else
     log "Cloning \e[32m${ICON_PACK_DIR_NAME}\e[0m (${ICON_PACK_REPO_PATH})"
     git clone https://github.com/vangyyy/papirus-icon-theme.git ${ICON_PACK_REPO_PATH}
 fi
+mkdir ${HOME}/.icons
 readonly ICON_PACK_NAME="Papirus"
 readonly ICON_PACK_BUILD_PATH="${HOME}/.icons/${ICON_PACK_NAME}"
 if [ -d ${ICON_PACK_BUILD_PATH} ]; then
     log "Skip building \e[93m${ICON_PACK_NAME}\e[0m (already build: ${ICON_PACK_BUILD_PATH})"
 else
     log "Building \e[32m${ICON_PACK_NAME}\e[0m (${ICON_PACK_BUILD_PATH})"
-    ${ICON_PACK_BUILD_PATH}/my_install.sh
+    ${ICON_PACK_REPO_PATH}/my_install.sh
 fi
 
 function gset() {
