@@ -33,7 +33,7 @@ for id in "${!EXTENSIONS[@]}"; do
 done
 
 banner "WALLPAPER, GTK THEME, ICON PACK"
-readonly WALLPAPER_NAME="michael-rogers-unsplash.jpg"
+readonly WALLPAPER_NAME="pawel-czerwinski-unsplash.jpg"
 if [ -f ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME} ]; then
     log "Skip copying \e[93m${WALLPAPER_NAME}\e[0m (already exists: ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME})"
 else
