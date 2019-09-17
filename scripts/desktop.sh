@@ -38,7 +38,8 @@ if [ -f ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME} ]; then
     log "Skip copying \e[93m${WALLPAPER_NAME}\e[0m (already exists: ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME})"
 else
     log "Copying \e[32m${WALLPAPER_NAME}\e[0m (${DIR}/${WALLPAPER_NAME})"
-    rsync -a ${DIR}/wallpaper/${WALLPAPER_NAME} ${HOME}/Pictures/Wallpapers
+    mkdir ${HOME}/Pictures/Wallpapers
+    rsync -a ${DIR}/wallpaper/${WALLPAPER_NAME} ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME}
 fi
 
 readonly THEME_NAME='Ant-Bloody'
@@ -47,6 +48,7 @@ if [ -d ${HOME}/.themes/${THEME_NAME} ]; then
     log "Skip getting \e[93m${THEME_NAME}\e[0m (already exists: ${THEME_PATH})"
 else
     log "Getting \e[32m${THEME_NAME}\e[0m"
+    mkdir ${HOME}/.themes
     readonly ARCHIVE1='Ant.tar'
     readonly ARCHIVE2='Ant-Bloody-slim-standard-buttons.tar'
     wget -q --show-progress https://github.com/EliverLara/Ant-Bloody/releases/latest/download/Ant-Bloody-slim.tar.xz -O /tmp/${ARCHIVE1}
