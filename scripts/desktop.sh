@@ -13,7 +13,6 @@ readonly EXTENSIONS=(
     [0307]="Dash to Dock"
     [0355]="Status Area Horizontal Spacing"
     [0800]="Remove Dropdown Arrows"
-    # [1011]="Dynamic Panel Transparency"
     [1128]="Hide Activities Button"
     [1217]="Appfolders Management"
 )
@@ -147,7 +146,7 @@ readonly DASH_TO_DOCK=${EXTENSIONS_DIR}/dash-to-dock@micxgx.gmail.com/schemas/
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock dock-fixed true
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock extend-height true
-gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock background-color '#000000'
+gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock background-color '#08090B'
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock background-opacity 1.0
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-background-color true
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
@@ -159,9 +158,3 @@ gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock dash-ma
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-theme-customize-running-dots true
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock running-indicator-style 'DOTS'
-
-# readonly DYNAMIC_PANEL_TRANSPARENCY=${EXTENSIONS_DIR}/dynamic-panel-transparency@rockon999.github.io/schemas/
-# gset --schemadir ${DYNAMIC_PANEL_TRANSPARENCY} org.gnome.shell.extensions.dynamic-panel-transparency enable-background-color true
-# gset --schemadir ${DYNAMIC_PANEL_TRANSPARENCY} org.gnome.shell.extensions.dynamic-panel-transparency enable-opacity true
-# gset --schemadir ${DYNAMIC_PANEL_TRANSPARENCY} org.gnome.shell.extensions.dynamic-panel-transparency theme-opacity 255
-# gset --schemadir ${DYNAMIC_PANEL_TRANSPARENCY} org.gnome.shell.extensions.dynamic-panel-transparency unmaximized-opacity 255
