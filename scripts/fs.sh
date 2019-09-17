@@ -12,6 +12,7 @@ readonly CREATE=(
     ${HOME}/.themes
     ${HOME}/.fonts
     ${HOME}/Pictures/Wallpapers
+    ${HOME}/StudioProjects
 )
 
 banner "REMOVING FILES AND DIRECTORIES"
