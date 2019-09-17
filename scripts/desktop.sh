@@ -51,9 +51,13 @@ else
     readonly ARCHIVE1='Ant.tar'
     readonly ARCHIVE2='Ant-Bloody-slim-standard-buttons.tar'
     wget -q --show-progress https://github.com/EliverLara/Ant-Bloody/releases/latest/download/Ant-Bloody-slim.tar.xz -O /tmp/${ARCHIVE1}
+
     log "Unpacking \e[32m${THEME_NAME}\e[0m (${THEME_PATH})"
     tar -xvf /tmp/${ARCHIVE1} -C /tmp/ ${ARCHIVE2} >/dev/null
     tar -xvf /tmp/${ARCHIVE2} -C ${HOME}/.themes >/dev/null
+
+    log "Customizing \e[32m${THEME_NAME}\e[0m"
+    sed -i '/.show-apps .show-apps-icon/!b;n;c\ \ color: white; }' ${THEME_PATH}/gnome-shell/gnome-shell.css
 fi
 
 readonly ICON_PACK_DIR_NAME="papirus-icon-theme"
@@ -92,12 +96,13 @@ gset org.gnome.desktop.interface clock-show-date true
 gset org.gnome.desktop.interface clock-show-weekday true
 gset org.gnome.desktop.interface clock-show-seconds true
 gset org.gnome.desktop.interface show-battery-percentage true
-gset org.gnome.desktop.interface font-name 'Roboto Medium 12'
-gset org.gnome.desktop.interface document-font-name 'Roboto Medium 12'
-gset org.gnome.desktop.interface monospace-font-name 'Roboto Mono Medium 12'
-gset org.gnome.desktop.interface gtk-theme 'Ant-Bloody'
+gset org.gnome.desktop.interface font-name 'Roboto Medium 11'
+gset org.gnome.desktop.interface document-font-name 'Roboto Medium 11'
+gset org.gnome.desktop.interface monospace-font-name 'Roboto Mono Medium 11'
 gset org.gnome.desktop.interface cursor-theme 'Adwaita'
 gset org.gnome.desktop.interface icon-theme 'Papirus'
+gset org.gnome.desktop.interface gtk-theme 'Ant-Bloody'
+gset org.gnome.shell.extensions.user-theme name 'Ant-Bloody'
 gset org.gnome.desktop.peripherals.touchpad tap-to-click true
 gset org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 gset org.gnome.desktop.background picture-uri 'file:///home/rastik/Pictures/Wallpapers/'${WALLPAPER_NAME}
