@@ -24,7 +24,7 @@ done
 
 ${DIR}/scripts/swap.sh
 ${DIR}/scripts/symlink.sh
-${DIR}/scripts/junk.sh
+${DIR}/scripts/fs.sh
 ${DIR}/scripts/packages.sh
 ${DIR}/scripts/services.sh
 ${DIR}/scripts/shortcuts.sh
