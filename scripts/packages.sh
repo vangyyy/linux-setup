@@ -3,15 +3,17 @@
 readonly REMOVE_PACKAGES=(
     manjaro-gdm-theme manjaro-gnome-assets matcha-gtk-theme papirus-icon-theme yaru-gtk-theme
     manjaro-hello hexchat appimagelauncher epiphany networkmanager-openconnect mhwd-tui yelp
-    gtkhash imagewriter totem qt4
+    gtkhash imagewriter totem qt4 bauh gnome-characters gnome-calendar gnome-clocks gnome-contacts
+    empathy evolution lollypop gnome-maps gnome-notes steam-manjaro gnome-todo transmission-gtk
+    uget gnome-weather gufw
 )
 
 readonly INSTALL_PACKAGES=(
-    git adb vim unrar chrome-gnome-shell gedit-plugins openssh deluge gimp inkscape rhythmbox vlc
-    vinagre jdk intellij-idea-ultimate-edition android-studio webstorm phpstorm visual-studio-code-bin
-    postman google-chrome etcher spotify gpmdp virtualbox slack-desktop teamviewer synergy
-    ttf-roboto ttf-roboto-mono noto-fonts manjaro-printer net-tools svgo bash-completion
-    docker docker-compose npm nodejs #TODO:texlive-full
+    git adb vim unrar chrome-gnome-shell gedit-plugins openssh deluge gimp inkscape rhythmbox
+    simple-scan vlc vinagre jdk intellij-idea-ultimate-edition android-studio webstorm phpstorm
+    visual-studio-code-bin postman google-chrome etcher spotify gpmdp virtualbox slack-desktop
+    teamviewer synergy ttf-roboto ttf-roboto-mono noto-fonts manjaro-printer net-tools svgo
+    bash-completion docker docker-compose npm nodejs #TODO:texlive-full
 )
 
 banner "UPDATE PACKAGES"
