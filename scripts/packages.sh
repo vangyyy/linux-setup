@@ -1,7 +1,7 @@
 #!/bin/bash
 
 readonly REMOVE_PACKAGES=(
-    manjaro-gdm-theme manjaro-gnome-assets matcha-gtk-theme papirus-icon-theme yaru-gtk-theme
+    manjaro-gnome-assets arc-maia-icon-theme matcha-gtk-theme papirus-icon-theme yaru-gtk-theme
     manjaro-hello hexchat appimagelauncher epiphany networkmanager-openconnect mhwd-tui yelp
     gtkhash imagewriter totem qt4 bauh gnome-characters gnome-calendar gnome-clocks gnome-contacts
     empathy evolution lollypop gnome-maps gnome-notes steam-manjaro gnome-todo transmission-gtk
