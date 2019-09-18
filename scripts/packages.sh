@@ -16,9 +16,6 @@ readonly INSTALL_PACKAGES=(
     bash-completion docker docker-compose npm nodejs #TODO:texlive-full
 )
 
-banner "UPDATE PACKAGES"
-yay -Syyu --noconfirm
-
 banner "INSTALLING YAY"
 if ! [ -x "$(command -v yay)" ]; then
     log "Installing \e[32mYay\e[0m"
@@ -30,6 +27,9 @@ if ! [ -x "$(command -v yay)" ]; then
 else
     log "Skip installing \e[93mYay\e[0m (already installed)"
 fi
+
+banner "UPDATE PACKAGES"
+yay -Syyu --noconfirm
 
 banner "REMOVING PACKAGES"
 for pkg in "${REMOVE_PACKAGES[@]}"; do
