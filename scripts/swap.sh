@@ -32,30 +32,30 @@ banner "SWAP FILE"
 
 if [ $(/bin/free --giga | grep "Swap" | awk '{print $2}') != 0 ]; then
     readonly EXISTING_SWAP_PATH=$(swapon | grep "file" | awk '{print $1}')
-    log "Skip creating swap file \e[93m${swap_path}\e[0m (already exists: ${EXISTING_SWAP_PATH})"
+    log "Skip creating swap file <_${swap_path}_> (already exists: ${EXISTING_SWAP_PATH})" ${C_YELLOW}
 else
-    log "Creating swap file \e[32m${swap_path}\e[0m sized \e[32m$swap_size\e[0m"
-    sudo fallocate -l $swap_size ${swap_path}
+    log "Creating swap file <_${swap_path}_> sized <_${swap_size}_>" ${C_GREEN}
+    sudo fallocate -l ${swap_size} ${swap_path}
     sudo mkswap ${swap_path}
 
     if [ $(stat -c "%a" ${swap_path}) == "600" ]; then
-        log "Skip setting permissions for \e[93m${swap_path}\e[0m (already set)"
+        log "Skip setting permissions for <_${swap_path}_> (already set)" ${C_YELLOW}
     else
-        log "Setting permissions for \e[32m${swap_path}\e[0m"
+        log "Setting permissions for <_${swap_path}_>" ${C_GREEN}
         sudo chmod 600 ${swap_path}
     fi
 
     if swapon | grep -q "${swap_path}"; then
-        log "Skip enabling swap file \e[93m${swap_path}\e[0m (already enabled)"
+        log "Skip enabling swap file <_${swap_path}_> (already enabled)" ${C_YELLOW}
     else
-        log "Enabling swapfile \e[32m${swap_path}\e[0m"
+        log "Enabling swapfile <_${swap_path}_>" ${C_GREEN}
         sudo swapon ${swap_path}
     fi
 
     if grep -q "swapfile" /etc/fstab; then
-        log "Skip enabling swap \e[93m${swap_path}\e[0m on boot (already enabled)"
+        log "Skip enabling swap <_${swap_path}_> on boot (already enabled)" ${C_YELLOW}
     else
-        log "Enabling swap file \e[32m${swap_path}\e[0m on boot"
+        log "Enabling swap file <_${swap_path}_> on boot" ${C_GREEN}
         sudo bash -c "echo ${swap_path} none swap defaults 0 0 >> /etc/fstab"
     fi
 fi

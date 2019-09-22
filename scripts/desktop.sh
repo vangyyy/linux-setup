@@ -20,70 +20,70 @@ readonly EXTENSIONS=(
 banner "GNOME EXTENSIONS"
 readonly SCRIPT_NAME="gnomeshell-extension-manage"
 if command -v ${SCRIPT_NAME} >/dev/null; then
-    log "Skip cloning \e[93m${SCRIPT_NAME}\e[0m script (already exists)"
+    log "Skip cloning <_${SCRIPT_NAME}_> script (already exists)" ${C_YELLOW}
 else
-    log "Cloning \e[32m${SCRIPT_NAME}\e[0m script"
+    log "Cloning <_${SCRIPT_NAME}_> script" ${C_GREEN}
     readonly SCRIPT_URL="https://raw.githubusercontent.com/NicolasBernaerts/ubuntu-scripts/master/ubuntugnome/gnomeshell-extension-manage"
     sudo wget -O /usr/local/bin/${SCRIPT_NAME} ${SCRIPT_URL}
     sudo chmod +x /usr/local/bin/${SCRIPT_NAME}
 fi
 for id in "${!EXTENSIONS[@]}"; do
-    log "Installing \e[32m${EXTENSIONS[$id]}\e[0m (id: ${id})"
+    log "Installing <_${EXTENSIONS[$id]}_> (id: ${id})" ${C_GREEN}
     gnomeshell-extension-manage --install --extension-id ${id} --user --version latest
 done
 
 banner "WALLPAPER, GTK THEME, ICON PACK"
 readonly WALLPAPER_NAME="pawel-czerwinski-unsplash.jpg"
 if [ -f ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME} ]; then
-    log "Skip copying \e[93m${WALLPAPER_NAME}\e[0m (already exists: ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME})"
+    log "Skip copying <_${WALLPAPER_NAME}_> (already exists: ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME})" ${C_YELLOW}
 else
-    log "Copying \e[32m${WALLPAPER_NAME}\e[0m (${DIR}/${WALLPAPER_NAME})"
+    log "Copying <_${WALLPAPER_NAME}_> (${DIR}/${WALLPAPER_NAME})" ${C_GREEN}
     rsync -a ${DIR}/wallpaper/${WALLPAPER_NAME} ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME}
 fi
 
 readonly THEME_NAME='Ant-Bloody'
 readonly THEME_PATH=${HOME}/.themes/${THEME_NAME}
 if [ -d ${HOME}/.themes/${THEME_NAME} ]; then
-    log "Skip getting \e[93m${THEME_NAME}\e[0m (already exists: ${THEME_PATH})"
+    log "Skip getting <_${THEME_NAME}_> (already exists: ${THEME_PATH})" ${C_YELLOW}
 else
-    log "Getting \e[32m${THEME_NAME}\e[0m"
+    log "Getting <_${THEME_NAME}_>" ${C_GREEN}
     readonly ARCHIVE1='Ant.tar'
     readonly ARCHIVE2='Ant-Bloody-slim-standard-buttons.tar'
     wget -q --show-progress https://github.com/EliverLara/Ant-Bloody/releases/latest/download/Ant-Bloody-slim.tar.xz -O /tmp/${ARCHIVE1}
 
-    log "Unpacking \e[32m${THEME_NAME}\e[0m (${THEME_PATH})"
-    tar -xvf /tmp/${ARCHIVE1} -C /tmp/ ${ARCHIVE2} >/dev/null
-    tar -xvf /tmp/${ARCHIVE2} -C ${HOME}/.themes >/dev/null
+    log "Unpacking <_${THEME_NAME}_> (${THEME_PATH})" ${C_GREEN}
+    tar -xvf /tmp/${ARCHIVE1} -C /tmp/ ${ARCHIVE2} _ >/dev/null
+    tar -xvf /tmp/${ARCHIVE2} -C ${HOME}/.themes _ >/dev/null
 
-    log "Customizing \e[32m${THEME_NAME}\e[0m"
+    log "Customizing <_${THEME_NAME}_>" ${C_GREEN}
     sed -i '/.show-apps .show-apps-icon/!b;n;c\ \ color: white; }' ${THEME_PATH}/gnome-shell/gnome-shell.css
 fi
 
 readonly ICON_PACK_DIR_NAME="papirus-icon-theme"
 readonly ICON_PACK_REPO_PATH="${HOME}/bin/${ICON_PACK_DIR_NAME}"
 if [ -d ${ICON_PACK_REPO_PATH} ]; then
-    log "Skip cloning \e[93m${ICON_PACK_DIR_NAME}\e[0m (already exists: ${ICON_PACK_REPO_PATH})"
+    log "Skip cloning <_${ICON_PACK_DIR_NAME}_> (already exists: ${ICON_PACK_REPO_PATH})" ${C_YELLOW}
 else
-    log "Cloning \e[32m${ICON_PACK_DIR_NAME}\e[0m (${ICON_PACK_REPO_PATH})"
+    log "Cloning <_${ICON_PACK_DIR_NAME}_> (${ICON_PACK_REPO_PATH})" ${C_GREEN}
     git clone https://github.com/vangyyy/papirus-icon-theme.git ${ICON_PACK_REPO_PATH}
 fi
 readonly ICON_PACK_NAME="Papirus"
 readonly ICON_PACK_BUILD_PATH="${HOME}/.icons/${ICON_PACK_NAME}"
 if [ -d ${ICON_PACK_BUILD_PATH} ]; then
-    log "Skip building \e[93m${ICON_PACK_NAME}\e[0m (already build: ${ICON_PACK_BUILD_PATH})"
+    log "Skip building <_${ICON_PACK_NAME}_> (already build: ${ICON_PACK_BUILD_PATH})" ${C_YELLOW}
 else
-    log "Building \e[32m${ICON_PACK_NAME}\e[0m (${ICON_PACK_BUILD_PATH})"
+    log "Building <_${ICON_PACK_NAME}_> (${ICON_PACK_BUILD_PATH})" ${C_GREEN}
     ${ICON_PACK_REPO_PATH}/my_install.sh
 fi
 
 function gset() {
     case "$1" in
     --schemadir)
-        log "Setting $3 \e[32m$4\e[0m ($5)"
+        log "Setting $3 <_$4_> ($5)" ${C_GREEN}
         gsettings $1 $2 set $3 $4 "$5"
         ;;
     *)
-        log "Setting $1 \e[32m$2\e[0m ($3)"
+        log "Setting $1 <_$2_> ($3)" ${C_GREEN}
         gsettings set $1 $2 "$3"
         ;;
     esac

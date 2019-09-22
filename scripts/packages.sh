@@ -18,35 +18,35 @@ readonly INSTALL_PACKAGES=(
 
 banner "INSTALLING YAY"
 if ! [ -x "$(command -v yay)" ]; then
-    log "Installing \e[32mYay\e[0m"
+    log "Installing <_Yay_>" ${C_GREEN}
     sudo pacman -S base-devel --noconfirm
     git clone https://aur.archlinux.org/yay.git /tmp/yay
     cd /tmp/yay
     makepkg -si --noconfirm
     cd -
 else
-    log "Skip installing \e[93mYay\e[0m (already installed)"
+    log "Skip installing <_Yay_> (already installed)" ${C_YELLOW}
 fi
 
 banner "UPDATE PACKAGES"
-yay -Syyu --noconfirm
+# yay -Syyu --noconfirm
 
 banner "REMOVING PACKAGES"
 for pkg in "${REMOVE_PACKAGES[@]}"; do
     if yay -Qi ${pkg} &>/dev/null; then
-        log "Removing \e[91m${pkg}\e[0m"
+        log "Removing <_${pkg}_>" ${C_RED}
         yay -Rsc ${pkg} --noconfirm
     else
-        log "Skip removing \e[93m${pkg}\e[0m (not installed)"
+        log "Skip removing <_${pkg}_> (not installed)" ${C_YELLOW}
     fi
 done
 
 banner "INSTALLING PACKAGES"
 for pkg in "${INSTALL_PACKAGES[@]}"; do
     if yay -Qi ${pkg} &>/dev/null; then
-        log "Skip installing \e[93m${pkg}\e[0m (already installed)"
+        log "Skip installing <_${pkg}_> (already installed)" ${C_YELLOW}
     else
-        log "Installing \e[32m${pkg}\e[0m"
+        log "Installing <_${pkg}_>" ${C_GREEN}
         yay -S ${pkg} --noconfirm
     fi
 done

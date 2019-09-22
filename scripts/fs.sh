@@ -18,19 +18,19 @@ readonly CREATE=(
 banner "REMOVING FILES AND DIRECTORIES"
 for file in "${REMOVE[@]}"; do
     if [ -d "${file}" ]; then
-        log "Removing \e[91m${file}\e[0m"
+        log "Removing <_${file}_>" ${C_RED}
         sudo rm -rf ${file}
     else
-        log "Skip removing \e[93m${file}\e[0m (non-existent)"
+        log "Skip removing <_${file}_> (non-existent)" ${C_YELLOW}
     fi
 done
 
 banner "CREATING DIRECTORIES"
 for file in "${CREATE[@]}"; do
     if [ -d "${file}" ]; then
-        log "Skip creating \e[93m${file}\e[0m (already exists)"
+        log "Skip creating <_${file}_> (already exists)" ${C_YELLOW}
     else
-        log "Creating \e[93m${file}\e[0m"
+        log "Creating <_${file}_>" ${C_GREEN}
         mkdir ${file}
     fi
 done

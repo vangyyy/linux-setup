@@ -14,7 +14,7 @@ for i in "${!KB_SHORTCUTS[@]}"; do
     command=$(sed -e 's/^[ \t]*//' <<<${arr[1]})
     name=$(sed -e 's/^[ \t]*//' <<<${arr[2]})
 
-    log "Setting \e[32m${name}\e[0m (${binding})"
+    log "Setting <_${name}_> (${binding})" ${C_GREEN}
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom${i}/ binding "${binding}"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom${i}/ command "${command}"
     gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom${i}/ name "${name}"

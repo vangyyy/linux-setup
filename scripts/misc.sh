@@ -3,23 +3,23 @@
 banner "DOCKER SETUP"
 # Create docker user group
 if ! grep -q "docker" /etc/group; then
-    log "Creating \e[32mdocker\e[0m group"
+    log "Creating <_docker_> group" ${C_GREEN}
     sudo groupadd docker
 else
-    log "Skip creating \e[32mdocker\e[0m group"
+    log "Skip creating <_docker_> group" ${C_YELLOW}
 fi
 
 # Assign current user to docker user group
 if ! grep -q "docker:[a-z0-9:]*:[\w,]*${USER}[\w,]*" /etc/group; then
-    log "Adding user \e[32m${USER}\e[0m to docker group"
+    log "Adding user <_${USER}_> to docker group" ${C_GREEN}
     sudo usermod -aG docker ${USER}
 else
-    log "Skip adding user \e[32m${USER}\e[0m to docker group"
+    log "Skip adding user <_${USER}_> to docker group" ${C_YELLOW}
 fi
 
 # Nautilus bookmarks config
 file=${HOME}/.config/gtk-3.0/bookmarks
-log "Adding \e[32mnautilus\e[0m bookmarks (${file})"
+log "Adding <_Nautilus_> bookmarks (${file})" ${C_GREEN}
 cat >${file} <<EOF
 sftp://pi@192.168.1.200/home/pi Pi
 file://${HOME}/.icons Icons
