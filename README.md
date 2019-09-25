@@ -14,7 +14,7 @@ Some scripts may work even on other distributions, GNOME setup was originally wr
 
 ## Preview
 
-<img src="https://imgur.com/Fh2m7Zf.png"/>
+<img src="https://imgur.com/62aweMf.png"/>
 
 ## Warning :warning:
 
