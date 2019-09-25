@@ -13,7 +13,10 @@ readonly INSTALL_PACKAGES=(
     simple-scan vlc vinagre jdk intellij-idea-ultimate-edition android-studio webstorm phpstorm
     visual-studio-code-bin postman google-chrome etcher spotify gpmdp virtualbox slack-desktop
     teamviewer synergy ttf-roboto ttf-roboto-mono noto-fonts manjaro-printer net-tools svgo
-    bash-completion docker docker-compose npm nodejs #TODO:texlive-full
+    bash-completion docker docker-compose npm nodejs
+    texlive-bibtexextra texlive-core texlive-fontsextra texlive-formatsextra texlive-humanities
+    texlive-langextra texlive-latexextra texlive-music texlive-pictures texlive-pstricks
+    texlive-publishers texlive-science biber
 )
 
 banner "INSTALLING YAY"
