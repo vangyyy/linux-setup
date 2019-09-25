@@ -52,8 +52,8 @@ else
     wget -q --show-progress https://github.com/EliverLara/Ant-Bloody/releases/latest/download/Ant-Bloody-slim.tar.xz -O /tmp/${ARCHIVE1}
 
     log "Unpacking <_${THEME_NAME}_> (${THEME_PATH})" ${C_GREEN}
-    tar -xvf /tmp/${ARCHIVE1} -C /tmp/ ${ARCHIVE2} _ >/dev/null
-    tar -xvf /tmp/${ARCHIVE2} -C ${HOME}/.themes _ >/dev/null
+    tar -xvf /tmp/${ARCHIVE1} -C /tmp/ ${ARCHIVE2} >/dev/null
+    tar -xvf /tmp/${ARCHIVE2} -C ${HOME}/.themes >/dev/null
 
     log "Customizing <_${THEME_NAME}_>" ${C_GREEN}
     sed -i '/.show-apps .show-apps-icon/!b;n;c\ \ color: white; }' ${THEME_PATH}/gnome-shell/gnome-shell.css
