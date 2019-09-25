@@ -4,8 +4,8 @@ readonly REMOVE_PACKAGES=(
     manjaro-gnome-assets arc-maia-icon-theme matcha-gtk-theme papirus-icon-theme yaru-gtk-theme
     manjaro-hello hexchat appimagelauncher epiphany networkmanager-openconnect mhwd-tui yelp
     gtkhash imagewriter totem qt4 bauh gnome-characters gnome-calendar gnome-clocks gnome-contacts
-    empathy evolution lollypop gnome-maps gnome-notes steam-manjaro gnome-todo transmission-gtk
-    uget gnome-weather gufw
+    gnome-system-log gnome-todo gnome-maps gnome-notes gnome-weather empathy evolution lollypop
+    steam-manjaro transmission-gtk uget gufw
 )
 
 readonly INSTALL_PACKAGES=(
