@@ -120,7 +120,7 @@ gset org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothin
 gset org.gnome.settings-daemon.plugins.power ambient-enabled false
 gset org.gnome.settings-daemon.plugins.power idle-dim false
 gset org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'spotify.desktop', 'deluge.desktop', \
-'postman.desktop', 'visual-studio-code.desktop', 'android-studio.desktop', 'gnome-system-monitor.desktop', \
+'android-studio.desktop', 'postman.desktop', 'visual-studio-code.desktop', 'gnome-system-monitor.desktop', \
 'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
 gset org.gnome.nautilus.preferences executable-text-activation 'ask'
 gset org.gnome.nautilus.preferences default-folder-viewer 'list-view'
@@ -156,3 +156,5 @@ gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock dash-ma
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-theme-customize-running-dots true
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock running-indicator-style 'DOTS'
+gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock show-mounts false
+gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock show-trash false
