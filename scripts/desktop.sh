@@ -14,7 +14,6 @@ readonly EXTENSIONS=(
     [0355]="Status Area Horizontal Spacing"
     [0800]="Remove Dropdown Arrows"
     [1128]="Hide Activities Button"
-    [1217]="Appfolders Management"
 )
 
 banner "GNOME EXTENSIONS"
@@ -101,7 +100,7 @@ gset org.gnome.desktop.interface monospace-font-name 'Roboto Mono Medium 11'
 gset org.gnome.desktop.interface cursor-theme 'Adwaita'
 gset org.gnome.desktop.interface icon-theme 'Papirus'
 gset org.gnome.desktop.interface gtk-theme 'Ant-Bloody'
-gset org.gnome.shell.extensions.user-theme name 'Ant-Bloody'
+# gset org.gnome.shell.extensions.user-theme name 'Ant-Bloody'
 gset org.gnome.desktop.peripherals.touchpad tap-to-click true
 gset org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 gset org.gnome.desktop.background picture-uri 'file:///home/rastik/Pictures/Wallpapers/'${WALLPAPER_NAME}
@@ -120,10 +119,9 @@ gset org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 gset org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
 gset org.gnome.settings-daemon.plugins.power ambient-enabled false
 gset org.gnome.settings-daemon.plugins.power idle-dim false
-gset org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', \
-'chrome-bgjohebimpjdhhocbknplfelpmdhifhd-Default.desktop', 'chrome-hmjkmjkepdijhoojdojkdfohbdgmmhki-Default.desktop', \
-'gpmdp.desktop', 'spotify.desktop', 'synergy.desktop', 'deluge.desktop', 'postman.desktop', 'visual-studio-code.desktop', \
-'gnome-system-monitor.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
+gset org.gnome.shell favorite-apps "['google-chrome.desktop', 'firefox.desktop', 'spotify.desktop', 'deluge.desktop', \
+'postman.desktop', 'visual-studio-code.desktop', 'android-studio.desktop', 'gnome-system-monitor.desktop', \
+'org.gnome.Terminal.desktop', 'org.gnome.Nautilus.desktop']"
 gset org.gnome.nautilus.preferences executable-text-activation 'ask'
 gset org.gnome.nautilus.preferences default-folder-viewer 'list-view'
 readonly TERM_PROFILE=b1dcc9dd-5262-4d8d-a863-c897e6d979b9
@@ -146,7 +144,7 @@ readonly DASH_TO_DOCK=${EXTENSIONS_DIR}/dash-to-dock@micxgx.gmail.com/schemas/
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock dock-fixed true
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock extend-height true
-gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock background-color '#08090B'
+gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock background-color '#000000' # Ant-Bloody: #08090B
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock background-opacity 1.0
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-background-color true
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true

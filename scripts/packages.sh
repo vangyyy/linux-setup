@@ -5,15 +5,17 @@ readonly REMOVE_PACKAGES=(
     manjaro-hello hexchat appimagelauncher epiphany networkmanager-openconnect mhwd-tui yelp
     gtkhash imagewriter totem qt4 bauh gnome-characters gnome-calendar gnome-clocks gnome-contacts
     gnome-system-log gnome-todo gnome-maps gnome-notes gnome-weather empathy evolution lollypop
-    steam-manjaro transmission-gtk uget gufw
+    steam-manjaro transmission-gtk uget gufw accerciser gnome-builder gnome-chess gnome-mahjongg
+    gnome-mines gnome-sudoku gnome-recipes gnome-robots lightsoff five-or-more devhelp caffeine-ng
+    hitori gnome-usage polari ghex gnome-nibbles quadrapassel gnome-tetravex
 )
 
 readonly INSTALL_PACKAGES=(
     git adb vim unrar chrome-gnome-shell gedit-plugins openssh deluge gimp inkscape rhythmbox
     simple-scan vlc vinagre jdk intellij-idea-ultimate-edition android-studio webstorm phpstorm
-    visual-studio-code-bin postman google-chrome etcher spotify gpmdp virtualbox slack-desktop
+    visual-studio-code-bin postman google-chrome etcher spotify virtualbox slack-desktop
     teamviewer synergy ttf-roboto ttf-roboto-mono noto-fonts manjaro-printer net-tools svgo
-    bash-completion docker docker-compose npm nodejs
+    bash-completion docker docker-compose npm nodejs peek
     texlive-bibtexextra texlive-core texlive-fontsextra texlive-formatsextra texlive-humanities
     texlive-langextra texlive-latexextra texlive-music texlive-pictures texlive-pstricks
     texlive-publishers texlive-science biber
