@@ -14,6 +14,7 @@ readonly EXTENSIONS=(
     [0355]="Status Area Horizontal Spacing"
     [0800]="Remove Dropdown Arrows"
     [1128]="Hide Activities Button"
+    # [1160]="Dash to Panel"
 )
 
 banner "GNOME EXTENSIONS"
@@ -32,7 +33,7 @@ for id in "${!EXTENSIONS[@]}"; do
 done
 
 banner "WALLPAPER, GTK THEME, ICON PACK"
-readonly WALLPAPER_NAME="pawel-czerwinski-unsplash.jpg"
+readonly WALLPAPER_NAME="johny-goerend-unsplash.jpg"
 if [ -f ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME} ]; then
     log "Skip copying <_${WALLPAPER_NAME}_> (already exists: ${HOME}/Pictures/Wallpapers/${WALLPAPER_NAME})" ${C_YELLOW}
 else
@@ -143,14 +144,14 @@ readonly EXTENSIONS_DIR=${HOME}/.local/share/gnome-shell/extensions
 readonly DASH_TO_DOCK=${EXTENSIONS_DIR}/dash-to-dock@micxgx.gmail.com/schemas/
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock dock-fixed true
-gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock extend-height true
+gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock extend-height false
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock background-color '#000000' # Ant-Bloody: #08090B
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock background-opacity 1.0
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-background-color true
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock dock-fixed true
-gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock extend-height true
-gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock force-straight-corner true
+gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock extend-height false
+gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock force-straight-corner false
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 28
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-theme-customize-running-dots true
@@ -158,3 +159,4 @@ gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock custom-
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock running-indicator-style 'DOTS'
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock show-mounts false
 gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock show-trash false
+gset --schemadir ${DASH_TO_DOCK} org.gnome.shell.extensions.dash-to-dock dock-fixed false
